@@ -8,7 +8,8 @@ body {
   line-height: 1.6;
   background-color: #f4f8fb;
   color: #333;
-  /* overflow-x: hidden; */
+  padding-top: 0px;
+  /* overflow-x: hidden; */ 
 }
 
 .navbar {
@@ -18,8 +19,15 @@ body {
   background: #86c523;
   padding: 10px 30px;
   flex-wrap: wrap;
-  position: sticky  ;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
+
+.nav-toggle {
+  display: none;
+}
+
 
 .web-logo img {
   height: 60px;
@@ -193,26 +201,6 @@ body {
   cursor: pointer;
   background: #ff4f00;
 }
-
-/* Responsiveness */ 
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-content h1 {
-    font-size: 28px;
-  }
-
-  .hero-content p {
-    font-size: 18px;
-  }
-
-  .btn {
-    width: 100%;
-  }
-} 
 
 .reviews {
   background: #86c523;
@@ -566,15 +554,255 @@ footer .footer-top p {
   height: 70px;
   margin-top: -25px;
   background: black;
-  color: #ccc;
+  color: white;
   text-align: center;
   padding: 15px 10px;
   font-size: 12px;
 }
 
 .footer-bottom a {
-  color: #ccc;
+  color: white;
   text-decoration: none;
   cursor: pointer;
+} 
+
+.footer-bottom a:hover {
+  color: #5c5c5c;
+  text-decoration: none;
+} 
+
+@media (max-width: 760px) {
+  .modal-content {
+    width: 90%;
+  }
+
+  .industry-options {
+    flex-wrap: wrap;
+  }
 }
 
+@media (max-width: 760px) {
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #86c523;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+  display: flex;
+  }
+
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .nav-toggle {
+  display: block;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  }
+
+  .web-logo img {
+    height: 80px;
+  }
+
+  .cta-book {
+    top: 180px;
+    right: 200px;
+    font-size: 13px;
+  }
+
+  .hero {
+    height: 650px;
+  }
+
+  .hero-content {
+    padding-top: 130px;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+    margin-top: 30px;
+    line-height: 55px;
+  }
+
+  .believe {
+    flex-wrap: wrap;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 30px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-buttons button {
+    width: 48%;
+    height: 60px;
+  }
+
+  .btn-hero {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .hero-buttons a{
+    text-align: left;
+    width: 130%;
+  }
+
+  .industry-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .industry-options .option {
+    width: 80%;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .reviews {
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .reviews h2 {
+    font-size: 24px;
+  }
+
+  /* .review-cards {
+    flex-direction: column;
+    align-items: center;
+  } */
+
+  .review-cards {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.review-cards .card {
+  min-width: 100%;
+}
+
+  .locations h1 {
+    font-size: 30px;
+  }
+
+  .locations h2 {
+    word-wrap: break-word;
+    word-spacing: 2px;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+  }
+
+  .locations .book-btn {
+    width: 35%;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+
+  .services h1,
+  .services p {
+    text-align: left;
+    margin-left: 0;
+    line-height: 20px;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-cards .card {
+    width: 90%;
+  }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .steps img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .cta-bottom {
+    height: 180px;
+  }
+
+  .cta-bottom h3{
+    margin-left: 150px;
+    font-size: 25px;
+    float: left;
+    margin-top: -30px;
+  }
+
+  .cta-btn {
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 170px;
+    font-size: 15px;
+    height: 50px;
+    float: left;
+  }
+
+  .why-choose .benefits {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  .why-choose h2 {
+    font-size: 30px;
+  }
+
+  .benefit p {
+    font-size: 15px;
+  }
+
+  footer {
+    background: #86c523;
+    height: 350px;
+  }
+
+  .footer-top {
+    align-items: start;
+    height: 450px;
+    background: #86c523;
+  }
+
+  footer ul {
+    gap: 25px;
+  }
+
+  .social-icons a img {
+    height: 50px;
+    width: 50px;
+    margin-top: -40px;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+    padding: 10px 5px;
+  }
+}
